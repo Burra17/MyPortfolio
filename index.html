@@ -32,6 +32,79 @@
                 animation: moveBackground 20s ease-in-out infinite;
             }
 
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.3;
+            animation: float-shapes 20s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, #22d3ee, #3b82f6);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            top: 60%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(225deg, #3b82f6, #22d3ee);
+            bottom: 20%;
+            left: 20%;
+            animation-delay: -10s;
+        }
+
+        .shape-4 {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(315deg, #ec4899, #a855f7);
+            top: 30%;
+            right: 25%;
+            animation-delay: -15s;
+        }
+
+        @keyframes float-shapes {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg) scale(1);
+            }
+
+            25% {
+                transform: translate(100px, -50px) rotate(90deg) scale(1.1);
+            }
+
+            50% {
+                transform: translate(50px, 100px) rotate(180deg) scale(0.9);
+            }
+
+            75% {
+                transform: translate(-50px, 50px) rotate(270deg) scale(1.05);
+            }
+        }
+
         @keyframes moveBackground {
             0%, 100% {
                 transform: translate(0, 0) scale(1);
@@ -551,6 +624,13 @@
     </style>
 </head>
 <body>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">Portfolio</div>
