@@ -29,8 +29,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # VIKTIGT: Här pekar vi ut din wwwroot-mapp!
-          path: './MyPortfolio/wwwroot'
+          # HÄR ÄR ÄNDRINGEN: Vi pekar direkt på wwwroot
+          path: './wwwroot'
 
       - name: Deploy to GitHub Pages
         id: deployment
