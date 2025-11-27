@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="index.html" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Include="wwwroot\andre-pettersson-cv.pdf" />
+    <None Include="wwwroot\index.html" />
   </ItemGroup>
 
 </Project>
