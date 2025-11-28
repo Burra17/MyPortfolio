@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>André Pettersson - Portfolio</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -49,6 +52,7 @@
     <section id="about">
         <div class="container">
             <h2 class="animate-on-scroll">About Me</h2>
+
             <div class="about-grid">
                 <div class="about-card animate-on-scroll">
                     <div class="icon">💻</div>
@@ -67,6 +71,14 @@
                     <p>Eager to expand into backend development, databases, APIs, and cloud technologies. Always excited to learn new frameworks and best practices.</p>
                 </div>
             </div>
+
+            <div class="github-calendar-container animate-on-scroll">
+                <h3>Github Coding Activity ⚡</h3>
+                <div class="calendar">
+                    Loading the data just for you...
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -77,7 +89,7 @@
 
                 <div class="project-card animate-on-scroll">
                     <h3>Quest Tracker RPG 🛡️</h3>
-                    <p>A gamified CLI task manager featuring AI-powered advice (OpenAI), secure SMS 2FA (Twilio), and a rich interface using Spectre.Console.</p>
+                    <p>My first C# project. A gamified CLI task manager featuring AI-powered advice (OpenAI), secure SMS 2FA (Twilio), and a rich interface using Spectre.Console.</p>
                     <div class="tech-tags">
                         <span class="tech-tag purple">C# / .NET 8</span>
                         <span class="tech-tag cyan">OpenAI API</span>
@@ -89,15 +101,12 @@
 
                 <div class="project-card animate-on-scroll">
                     <h3>Brogården 🏡</h3>
-
                     <p>A responsive landing page for a hostel and campsite. Built to drive bookings and showcase the facility with a modern design.</p>
-
                     <div class="tech-tags">
                         <span class="tech-tag orange">HTML5</span>
                         <span class="tech-tag pink">CSS3</span>
                         <span class="tech-tag cyan">Responsive Design</span>
                     </div>
-
                     <div style="margin-top: 1rem; display: flex; gap: 1rem;">
                         <a href="https://burra17.github.io/Brogarden-website/index.html" class="project-link" target="_blank">Live Demo →</a>
                         <a href="https://github.com/Burra17/Brogarden-website" class="project-link" target="_blank">View Code →</a>
@@ -143,6 +152,8 @@
     <footer>
         <p>© 2025 André Pettersson. Built with HTML & CSS.</p>
     </footer>
+
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
 
     <script src="js/script.js"></script>
 </body>
