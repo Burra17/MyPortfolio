@@ -42,3 +42,12 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
 });
+
+// GitHub Calendar Initialization
+// Detta hämtar datan för användaren "Burra17"
+GitHubCalendar(".calendar", "Burra17", {
+    responsive: true,
+    tooltips: true
+}).then(function () {
+    console.log("GitHub Calendar loaded!");
+});
