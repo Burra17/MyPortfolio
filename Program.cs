@@ -3,7 +3,7 @@ using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Lägg till stöd för HttpClient
+// Lägg till stöd för HttpClient så vi kan anropa OpenAI
 builder.Services.AddHttpClient();
 
 var app = builder.Build();
@@ -21,38 +21,33 @@ app.UseStaticFiles();
 
 app.MapPost("/api/chat", async (HttpContext context, IConfiguration config, IHttpClientFactory clientFactory) =>
 {
-    // A. Läs in meddelandet
-    using var reader = new StreamReader(context.Request.Body);
-    var body = await reader.ReadToEndAsync();
-
-    if (string.IsNullOrWhiteSpace(body)) return;
-
-    string userMessage = "";
+    // A. Läs in datan säkert med en klass (hanterar både enstaka meddelanden och historik)
+    ChatRequest? request;
     try
     {
-        userMessage = JsonDocument.Parse(body).RootElement.GetProperty("message").GetString();
+        request = await context.Request.ReadFromJsonAsync<ChatRequest>();
     }
     catch
     {
-        context.Response.StatusCode = 400;
-        // ÄNDRAT: Engelska felmeddelande
-        await context.Response.WriteAsJsonAsync(new { error = "Could not parse message." });
-        return;
+        return Results.BadRequest(new { error = "Invalid JSON format." });
     }
 
-    // B. Hämta API-nyckeln
+    // Validera att vi fick någon data alls
+    if (request == null || (string.IsNullOrWhiteSpace(request.Message) && (request.History == null || request.History.Count == 0)))
+    {
+        return Results.BadRequest(new { error = "Message or History is missing." });
+    }
+
+    // B. Hämta API-nyckeln (Fungerar för både User Secrets och Azure Environment Variables)
     var apiKey = config["OpenAI:Key"];
 
     if (string.IsNullOrEmpty(apiKey))
     {
-        context.Response.StatusCode = 500;
-        // ÄNDRAT: Engelska felmeddelande
-        await context.Response.WriteAsJsonAsync(new { error = "No API key found on server." });
-        return;
+        return Results.Json(new { error = "No API key found on server." }, statusCode: 500);
     }
 
     // --------------------------------------------------------------
-    // C. HÄR ÄR DIN NYA ENGELSKA SYSTEM PROMPT
+    // C. DIN SYSTEM PROMPT (Här definierar vi din personlighet)
     // --------------------------------------------------------------
     var systemPrompt = @"
 You ARE André Pettersson – an AI avatar representing the real André on his portfolio website.
@@ -212,35 +207,63 @@ ILLEGAL REQUESTS:
 ";
 
     // --------------------------------------------------------------
-    // D. Förbered datan
+    // D. Bygg meddelande-listan (MED STÄDNING)
     // --------------------------------------------------------------
+    var messagesToSend = new List<object>();
+
+    // 1. Lägg ALLTID till din System Prompt först (den färska versionen)
+    messagesToSend.Add(new { role = "system", content = systemPrompt });
+
+    // 2. Lägg till historiken, men var KRÄSEN!
+    if (request.History != null && request.History.Count > 0)
+    {
+        // A. Ta bara de senaste 10 meddelandena för att spara minne/tokens
+        var cleanHistory = request.History.TakeLast(10);
+
+        foreach (var msg in cleanHistory)
+        {
+            // B. Säkerhetsspärr: Lägg ALDRIG till gamla system-meddelanden från historiken
+            // Vi har ju redan lagt till den "riktiga" system prompten ovan.
+            if (msg.Role.ToLower() == "system")
+            {
+                continue;
+            }
+
+            messagesToSend.Add(new { role = msg.Role.ToLower(), content = msg.Content });
+        }
+    }
+
+    // 3. Lägg till det nya meddelandet
+    if (!string.IsNullOrWhiteSpace(request.Message))
+    {
+        messagesToSend.Add(new { role = "user", content = request.Message });
+    }
+
+    // E. Förbered datan (Payload)
     var requestData = new
     {
-        model = "gpt-4o-mini",
-        messages = new[]
-        {
-            new { role = "system", content = systemPrompt },
-            new { role = "user", content = userMessage }
-        },
+        model = "gpt-4o-mini", // Eller gpt-3.5-turbo om du föredrar
+        messages = messagesToSend,
         max_tokens = 300
     };
 
-    // E. Skicka iväg frågan till OpenAI
+    // F. Anropa OpenAI
     var client = clientFactory.CreateClient();
     client.DefaultRequestHeaders.Clear();
     client.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
 
-    var jsonContent = new StringContent(
-        JsonSerializer.Serialize(requestData),
-        Encoding.UTF8,
-        "application/json"
-    );
-
     try
     {
-        var response = await client.PostAsync("https://api.openai.com/v1/chat/completions", jsonContent);
+        // Vi använder PostAsJsonAsync som är modernare och enklare
+        var response = await client.PostAsJsonAsync("https://api.openai.com/v1/chat/completions", requestData);
 
-        // F. Läs svaret från OpenAI
+        if (!response.IsSuccessStatusCode)
+        {
+            var errorMsg = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"OpenAI Error: {errorMsg}"); // Syns i Azure Logs
+            return Results.Json(new { error = "Error connecting to AI service." }, statusCode: 500);
+        }
+
         var responseString = await response.Content.ReadAsStringAsync();
         using var doc = JsonDocument.Parse(responseString);
 
@@ -250,16 +273,30 @@ ILLEGAL REQUESTS:
                           .GetProperty("content")
                           .GetString();
 
-        // G. Skicka tillbaka svaret till din hemsida
-        await context.Response.WriteAsJsonAsync(new { reply = botReply });
+        return Results.Ok(new { reply = botReply });
     }
     catch (Exception ex)
     {
-        Console.WriteLine($"Error calling OpenAI: {ex.Message}");
-        context.Response.StatusCode = 500;
-        // ÄNDRAT: Engelska felmeddelande
-        await context.Response.WriteAsJsonAsync(new { error = "Something went wrong with the AI service." });
+        Console.WriteLine($"Exception: {ex.Message}");
+        return Results.Json(new { error = "Internal server error." }, statusCode: 500);
     }
 });
 
 app.Run();
+
+// ---------------------------------------------------------
+// Klasser för datan (Läggs sist i filen)
+// ---------------------------------------------------------
+
+public class ChatRequest
+{
+    // Frontend kan skicka antingen "message" (första gången) eller "history" (när man chattat lite)
+    public string? Message { get; set; }
+    public List<ChatMessage>? History { get; set; }
+}
+
+public class ChatMessage
+{
+    public string Role { get; set; } = "";
+    public string Content { get; set; } = "";
+}
