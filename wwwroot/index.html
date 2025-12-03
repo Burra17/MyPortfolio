@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>André Pettersson - Portfolio</title>
-
     <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
-
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,6 +22,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#ai-chat">AI Chat</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <button class="menu-toggle" id="menuToggle">☰</button>
@@ -38,8 +37,8 @@
             <h1>André Pettersson</h1>
             <p class="subtitle">Full Stack Development Student | Aspiring Developer</p>
             <div class="cta-buttons">
-                <button class="cta-button primary" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-                    View My Work
+                <button class="cta-button primary" onclick="document.getElementById('ai-chat').scrollIntoView({behavior: 'smooth'})">
+                    Chat with AI Me
                 </button>
                 <a href="andre-pettersson-cv.pdf" class="cta-button secondary" target="_blank">
                     <span class="download-icon">📄</span>
@@ -52,7 +51,6 @@
     <section id="about">
         <div class="container">
             <h2 class="animate-on-scroll">About Me</h2>
-
             <div class="about-grid">
                 <div class="about-card animate-on-scroll">
                     <div class="icon">💻</div>
@@ -71,14 +69,12 @@
                     <p>Eager to expand into backend development, databases, APIs, and cloud technologies. Always excited to learn new frameworks and best practices.</p>
                 </div>
             </div>
-
             <div class="github-calendar-container animate-on-scroll">
                 <h3>Github Coding Activity ⚡</h3>
                 <div class="calendar">
                     Loading the data just for you...
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -86,7 +82,6 @@
         <div class="container">
             <h2 class="animate-on-scroll">Featured Projects</h2>
             <div class="projects-grid">
-
                 <div class="project-card animate-on-scroll">
                     <h3>Quest Tracker RPG 🛡️</h3>
                     <p>My first C# project. A gamified CLI task manager featuring AI-powered advice (OpenAI), secure SMS 2FA (Twilio), and a rich interface using Spectre.Console.</p>
@@ -98,7 +93,6 @@
                     </div>
                     <a href="https://github.com/Burra17/Portfolio-Projekt-Quest-Tracker" class="project-link" target="_blank">View Project →</a>
                 </div>
-
                 <div class="project-card animate-on-scroll">
                     <h3>Brogården 🏡</h3>
                     <p>A responsive landing page for a hostel and campsite. Built to drive bookings and showcase the facility with a modern design.</p>
@@ -112,7 +106,6 @@
                         <a href="https://github.com/Burra17/Brogarden-website" class="project-link" target="_blank">View Code →</a>
                     </div>
                 </div>
-
                 <div class="project-card animate-on-scroll">
                     <h3>GitHub Projects 🚀</h3>
                     <p>Various learning projects and code experiments</p>
@@ -123,11 +116,43 @@
                     </div>
                     <a href="https://github.com/burra17" class="project-link" target="_blank">View Project →</a>
                 </div>
-
             </div>
         </div>
     </section>
 
+    <section id="ai-chat">
+        <div class="container">
+            <h2 class="animate-on-scroll">Ask My AI Assistant</h2>
+            <p style="text-align: center; color: #94a3b8; margin-bottom: 2rem;">
+                Curious about my skills or background? Ask my AI-avatar anything!
+            </p>
+
+            <div id="chat-box" class="embedded-chat animate-on-scroll">
+                <div class="chat-header">
+                    <div class="header-title">
+                        <h3>André's AI Assistant</h3>
+                        <span class="status-dot"></span>
+                    </div>
+                </div>
+
+                <div id="messages">
+                    <div class="message-row ai-row">
+                        <div class="avatar">🤖</div>
+                        <div class="message-bubble ai-bubble">
+                            Hi! I'm André (in AI form). Feel free to ask me about my code, my projects, or why I love C#!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <input type="text" id="user-input" placeholder="Type your question here...">
+                    <button id="send-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
@@ -154,7 +179,7 @@
     </footer>
 
     <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
-
     <script src="js/script.js"></script>
+    <script src="js/chat.js"></script>
 </body>
 </html>
