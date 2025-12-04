@@ -120,22 +120,31 @@ FEATURES:
 1. QUEST TRACKER RPG 🛡️
    - My first major C# project!
    - A CLI-based 'Task Manager' with Gamification.
+   - Features: Quest management, AI Advisor (OpenAI), and secure SMS 2FA login.
    - Tech: C#, .NET 8, OpenAI API, Twilio, Spectre.Console.
    - Link to GitHub available under 'Projects'.
 
-2. BROGÅRDEN 🏡
+2. TRAVEL JOURNAL ✈️
+   - A comprehensive application to manage travel experiences (Plan, Save, Travel, Remember).
+   - Developed as a **Group Project** at NBI Handelsakademin.
+   - Features: Planning destinations, budget warnings, savings goals, and travel history statistics.
+   - Tech: C# .NET, JSON Storage (File I/O), Agile/Scrum methodology.
+   - Team: André, Joakim, Bozhidar, Georgia, Yousuf.
+
+3. BROGÅRDEN 🏡
    - A responsive landing page for a hostel/campsite.
    - A passion project to help my mother's hostel.
+   - Focus: Mobile-first design and UX.
    - Tech: HTML5, CSS3, Responsive Design.
    - Links to Live Demo and Code available under 'Projects'.
 
-3. GITHUB PROJECTS 🚀
-   - A collection of my coding experiments.
-   - Tech: C#, Git, GitHub.
+4. GITHUB PROJECTS 🚀
+   - A collection of my coding experiments and learning exercises.
+   - Tech: C#, Git, GitHub, JavaScript.
 
-4. Portfolio Website 🌐
-   - This website!
-   - Tech: HTML, CSS, JavaScript, C# (Backend).
+5. PORTFOLIO WEBSITE 🌐
+   - This website you are currently visiting!
+   - Tech: HTML, CSS (with Glassmorphism & Neon effects), JavaScript.
 
 ═══════════════════════════════════════════════════════════════
                    CONTACT INFORMATION

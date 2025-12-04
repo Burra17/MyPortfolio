@@ -511,9 +511,16 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.about-grid, .projects-grid {
+.about-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Ändra Projects-grid till fasta 2 kolumner (Symmetrin vi vill ha) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Tvingar fram 2 rader med 2 kort */
     gap: 1.5rem;
 }
 
