@@ -7,7 +7,7 @@ Welcome to my personal portfolio website! This project showcases my journey as a
 The site is built with a **"Cyber/Tech"** aesthetic, utilizing neon glows, glassmorphism, and smooth animations to create an immersive user experience.
 
 ## 🚀 Live Demo
-[**Click here to view the Portfolio**]([https://burra17.github.io/your-repo-name-here/](https://andreportfolio-2025-abdvfvfkd8c0eeev.westeurope-01.azurewebsites.net/)) 
+[**Click here to view the Portfolio**](https://andreportfolio-2025-abdvfvfkd8c0eeev.westeurope-01.azurewebsites.net/)
 
 ## ✨ Key Features
 
