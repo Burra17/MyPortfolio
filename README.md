@@ -7,15 +7,14 @@ Welcome to my personal portfolio website! This project showcases my journey as a
 The site is built with a **"Cyber/Tech"** aesthetic, utilizing neon glows, glassmorphism, and smooth animations to create an immersive user experience.
 
 ## 🚀 Live Demo
-[**Click here to view the Portfolio**](https://burra17.github.io/your-repo-name-here/) 
-*(Don't forget to update the link above once your site is published!)*
+[**Click here to view the Portfolio**]([https://burra17.github.io/your-repo-name-here/](https://andreportfolio-2025-abdvfvfkd8c0eeev.westeurope-01.azurewebsites.net/)) 
 
 ## ✨ Key Features
 
-* **🎨 Cyber/Tech Design:** A dark theme with neon cyan/purple accents and "Glass Shine" effects on cards.
+* **🎨 Cyber/Tech Design:** A dark theme with neon cyan/purple accents.
 * **🤖 AI Chat Interface:** A custom-built, embedded chat interface simulating an AI assistant.
 * **📱 Fully Responsive:** Optimized for desktop, tablet, and mobile devices (Mobile-first approach).
-* **⚡ Animations:** Smooth entry animations (`IntersectionObserver`), typewriter effects, and floating background shapes.
+* **⚡ Animations:** Smooth entry animations (`IntersectionObserver`), floating background shapes.
 * **📊 GitHub Calendar:** Integrated API to display live coding activity stripes.
 
 ## 🛠️ Tech Stack
