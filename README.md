@@ -1,7 +1,5 @@
 # 👨‍💻 André Pettersson - Personal Portfolio
 
-![Portfolio Banner](screenshot.png)
-
 Welcome to my personal portfolio website! This project showcases my journey as a Full Stack Development student, featuring my projects, skills, and a glimpse into my coding activity.
 
 The site is built with a **"Cyber/Tech"** aesthetic, utilizing neon glows, glassmorphism, and smooth animations to create an immersive user experience.
