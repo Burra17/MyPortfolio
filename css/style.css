@@ -517,13 +517,15 @@ h2 {
     gap: 1.5rem;
 }
 
-/* Ändra Projects-grid till fasta 2 kolumner (Symmetrin vi vill ha) */
+/* NY KOD: */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Tvingar fram 2 rader med 2 kort */
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
+    justify-content: center; /* Centrerar kort på sista raden */
 }
 
+/* Gemensamt utseende för båda korttyperna */
 .about-card, .project-card {
     background: rgba(30, 41, 59, 0.6);
     backdrop-filter: blur(10px);
@@ -533,6 +535,14 @@ h2 {
     transition: all 0.3s;
     position: relative;
     overflow: hidden;
+}
+
+/* Specifik bredd för projektkorten så de blir två per rad */
+.project-card {
+    flex: 0 1 calc(50% - 1rem); /* Tar upp halva bredden minus gap */
+    min-width: 320px; /* Gör att de hoppar ner till en kolumn på smala skärmar */
+    display: flex;
+    flex-direction: column;
 }
 
     .about-card:hover, .project-card:hover {
