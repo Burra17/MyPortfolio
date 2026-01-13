@@ -91,12 +91,13 @@ FEATURES:
    - Tech: C# .NET, JSON Storage (File I/O), Agile/Scrum methodology.
    - Team: André, Joakim, Bozhidar, Georgia, Yousuf.
 
-3. BROGÅRDEN 🏡
-   - A responsive landing page for a hostel/campsite.
-   - A passion project to help my mother's hostel.
-   - Focus: Mobile-first design and UX.
-   - Tech: HTML5, CSS3, Responsive Design.
-   - Links to Live Demo and Code available under 'Projects'.
+3. BROGÅRDEN (Two Versions) 🏡🌲
+   - Version 1: A responsive landing page built with HTML5 and CSS3.
+     Focus: Mobile-first design and UX.
+   - Version 2 (The Upgrade): A modern Single Page Application (SPA) built with React and Vite.
+     Focus: Component-based architecture, faster performance, and a refined "Nature UI" with Glassmorphism.
+     Tech: React, Vite, JavaScript, Modern CSS.
+     I rebuilt this to demonstrate his transition from static web design to modern frontend frameworks.
 
 4. GITHUB PROJECTS 🚀
    - A collection of my coding experiments and learning exercises.

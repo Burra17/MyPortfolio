@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\andre-pettersson-cv.pdf" />
-    <None Include="wwwroot\index.html" />
-    <None Include="wwwroot\js\script.js" />
-    <None Include="wwwroot\css\style.css" />
+    <Compile Remove="wwwroot\**" />
+    <Content Remove="wwwroot\**" />
+    <EmbeddedResource Remove="wwwroot\**" />
+    <None Remove="wwwroot\**" />
   </ItemGroup>
 
   <ItemGroup>
