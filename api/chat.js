@@ -218,24 +218,27 @@ ILLEGAL REQUESTS:
         const data = await response.json();
         const aiReply = data.choices[0].message.content;
 
-        // --- DISCORD LOGGING HÄR ---
-        // Vi skickar loggen utan 'await' för att inte låta användaren vänta på Discord
-        fetch(process.env.DISCORD_WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                username: "André Portfolio Bot",
-                embeds: [{
-                    title: "💬 Ny chatt-interaktion",
-                    color: 3447003, // Blå färg
-                    fields: [
-                        { name: "Fråga", value: message.substring(0, 1024) },
-                        { name: "Svar", value: aiReply.substring(0, 1024) }
-                    ],
-                    timestamp: new Date().toISOString()
-                }]
-            })
-        }).catch(err => console.error("Discord error:", err));
+        // --- DISCORD LOGGING (UPPDATERAD MED AWAIT) ---
+        try {
+            await fetch(process.env.DISCORD_WEBHOOK_URL, { // Lade till await här!
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: "André Portfolio Bot",
+                    embeds: [{
+                        title: "💬 Ny chatt-interaktion",
+                        color: 3447003,
+                        fields: [
+                            { name: "Fråga", value: message.substring(0, 1024) },
+                            { name: "Svar", value: aiReply.substring(0, 1024) }
+                        ],
+                        timestamp: new Date().toISOString()
+                    }]
+                })
+            });
+        } catch (err) {
+            console.error("Discord error:", err);
+        }
 
         // 6. Skicka tillbaka svaret till din frontend
         return res.status(200).json({ reply: aiReply });
