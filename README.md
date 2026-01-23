@@ -5,9 +5,9 @@ Welcome to my personal portfolio website! This project showcases my journey as a
 The site is built with a **"Cyber/Tech"** aesthetic, utilizing neon glows, glassmorphism, and smooth animations to create an immersive user experience.
 
 ## 🚀 Live Demo
-[**Click here to view the Portfolio**](https://andreportfolio-2025-abdvfvfkd8c0eeev.westeurope-01.azurewebsites.net/)
+[**Click here to view the Portfolio (Vercel)**](https://andres-portfolio-two.vercel.app/)
 
-## ✨ Key Features
+
 
 * **🎨 Cyber/Tech Design:** A dark theme with neon cyan/purple accents.
 * **🤖 AI Chat Interface:** A custom-built, embedded chat interface simulating an AI assistant.
