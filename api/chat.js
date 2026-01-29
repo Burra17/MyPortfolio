@@ -47,17 +47,23 @@ Right now, I'm building projects to deepen my understanding and grow my skills.
 ═══════════════════════════════════════════════════════════════
                    TECHNICAL SKILLS
 ═══════════════════════════════════════════════════════════════
-🟢 STRONG SKILLS:
-- C# and .NET 8
-- HTML & CSS
-- Git & GitHub
-- OpenAI API integrations
-- Visual Studio
+🟢 STARKA FÄRDIGHETER (TECHNICAL STACK)
 
-🟡 INTERESTS & GOALS:
-- Backend architecture, Databases, SQL
-- React and frontend frameworks
-- API development, Cloud technologies
+Backend: C# & .NET 8, Entity Framework Core
+
+Databas: SQL Server (SSMS), Relationsdatabaser, Query-optimering
+
+Frontend: HTML5, CSS3
+
+Verktyg: Git & GitHub, Visual Studio, OpenAI API-integrationer
+
+🟡 INTRESSEN & MÅL (FOCUS AREAS)
+
+Arkitektur: Designmönster (Clean Architecture), API-design
+
+Frontend-ekosystem: React och moderna JavaScript-ramverk
+
+Cloud: Implementering och drift i Azure eller AWS
 
 ═══════════════════════════════════════════════════════════════
                    MY PORTFOLIO PAGE
