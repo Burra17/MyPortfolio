@@ -7,6 +7,7 @@
     <title>André Pettersson - Portfolio</title>
     <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="floating-shapes">
@@ -325,21 +326,62 @@
     </section>
     <section id="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p>I'm always open to new opportunities and collaborations.<br>Let's create something amazing together!</p>
-            <div class="social-links">
-                <a href="mailto:andre20030417@gmail.com" class="social-link">
-                    <div class="social-icon">📧</div>
-                    <span class="social-label">Email</span>
-                </a>
-                <a href="https://github.com/burra17" class="social-link" target="_blank">
-                    <div class="social-icon">💻</div>
-                    <span class="social-label">GitHub</span>
-                </a>
-                <a href="https://linkedin.com/in/andre-pettersson" class="social-link" target="_blank">
-                    <div class="social-icon">💼</div>
-                    <span class="social-label">LinkedIn</span>
-                </a>
+            <h2 class="animate-on-scroll">Get In Touch</h2>
+
+            <div class="contact-wrapper animate-on-scroll">
+
+                <div class="contact-info">
+                    <h3>Let's talk code!</h3>
+                    <p>I'm currently looking for <strong>LIA (Internship)</strong> opportunities and junior Fullstack / .NET roles. Whether you have a question or just want to say hi, my inbox is open!</p>
+
+                    <div class="info-item">
+                        <div class="icon-box">📍</div>
+                        <div>
+                            <span>Based in:</span>
+                            <strong>Gothenburg, Sweden</strong>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="icon-box">📧</div>
+                        <div>
+                            <span>Email:</span>
+                            <a href="mailto:andre20030417@gmail.com">andre20030417@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="social-buttons">
+                        <a href="https://linkedin.com/in/andre-pettersson" target="_blank" class="social-btn linkedin">
+                            <i class="fab fa-linkedin"></i> <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/burra17" target="_blank" class="social-btn github">
+                            <i class="fab fa-github"></i> <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="glass-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="user_name" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="user_email" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your opportunity..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span id="btn-text">Send Message</span>
+                    </button>
+                    <p id="form-status"></p>
+                </form>
+
             </div>
         </div>
     </section>
@@ -351,5 +393,9 @@
     <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/chat-ui.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script src="js/contact.js"></script>
 </body>
 </html>
