@@ -28,7 +28,8 @@ This project is built using vanilla web technologies to demonstrate solid fundam
 
 The portfolio highlights my key projects, structured in a symmetrical grid layout:
 
-1.  **🛡️ Quest Tracker RPG:** A CLI-based task manager gamified with C#, OpenAI, and Twilio.
+1.  **📅 ShiftMate (Fullstack WMS):** A robust Workforce Management System for scheduling and shift swaps, featuring .NET 8, React, PostgreSQL, and Docker.
+2.  **🛡️ Quest Tracker RPG:** A CLI-based task manager gamified with C#, OpenAI, and Twilio.
 2.  **✈️ Travel Journal:** A group project for managing travel plans and memories (C# & JSON Storage).
 3.  **🏡 Brogården:** A responsive landing page for a hostel/campsite (HTML/CSS).
 4.  **🚀 GitHub Projects:** A collection of my coding experiments and continuous learning.
