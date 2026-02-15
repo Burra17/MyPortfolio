@@ -1,10 +1,11 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
     const sendBtn = document.getElementById('send-btn');
     const userInput = document.getElementById('user-input');
     const messagesContainer = document.getElementById('messages');
 
-    // Sparar historiken lokalt under sessionen
+    // Session-level chat history
     let chatHistory = [];
+    const MAX_HISTORY = 10;
 
     sendBtn.addEventListener('click', sendMessage);
 
@@ -16,19 +17,18 @@
         const message = userInput.value.trim();
         if (!message) return;
 
-        // Inaktivera input medan AI:n svarar
+        // Disable input while AI responds
         userInput.value = '';
         userInput.disabled = true;
         sendBtn.disabled = true;
 
-        // Visa användarens meddelande
+        // Show user message
         addMessage(message, 'user');
 
-        // Visa "tänker"-bubbla
+        // Show "thinking" bubble
         const loadingBubble = addMessage("...", 'ai');
 
         try {
-            // Vi skickar meddelandet och historiken till din nya Vercel-backend
             const payload = {
                 message: message,
                 history: chatHistory
@@ -40,24 +40,27 @@
                 body: JSON.stringify(payload)
             });
 
-            if (!response.ok) throw new Error('Nätverksfel hos servern');
+            if (!response.ok) throw new Error('Server network error');
 
             const data = await response.json();
 
-            // Ta bort "tänker"-bubblan och visa svaret
+            // Remove "thinking" bubble and show response
             loadingBubble.remove();
             addMessage(data.reply, 'ai');
 
-            // Uppdatera historiken för att bevara kontexten
+            // Update history and trim to prevent unbounded growth
             chatHistory.push({ role: "user", content: message });
             chatHistory.push({ role: "assistant", content: data.reply });
+            if (chatHistory.length > MAX_HISTORY) {
+                chatHistory = chatHistory.slice(-MAX_HISTORY);
+            }
 
         } catch (error) {
             console.error('Error:', error);
             loadingBubble.remove();
-            addMessage("Kunde inte nå servern. Kontrollera din anslutning eller API-nyckel på Vercel.", 'ai');
+            addMessage("Could not reach the server. Please check your connection.", 'ai');
         } finally {
-            // Aktivera input igen
+            // Re-enable input
             userInput.disabled = false;
             sendBtn.disabled = false;
             userInput.focus();
@@ -71,7 +74,7 @@
         if (sender !== 'user') {
             const avatarDiv = document.createElement('div');
             avatarDiv.classList.add('avatar');
-            avatarDiv.textContent = '🤖';
+            avatarDiv.textContent = '\u{1F916}';
             rowDiv.appendChild(avatarDiv);
         }
 
@@ -82,7 +85,7 @@
         rowDiv.appendChild(bubbleDiv);
         messagesContainer.appendChild(rowDiv);
 
-        // Scrolla automatiskt till botten
+        // Auto-scroll to bottom
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
         return rowDiv;

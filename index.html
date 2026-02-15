@@ -1,11 +1,12 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="André Pettersson - Fullstack Developer Portfolio. .NET, React, and modern web development projects. Based in Gothenburg, Sweden.">
     <link rel="icon" type="image/png" href="/favicon-32x32.png">
     <title>André Pettersson - Portfolio</title>
-    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@2.3.4/dist/github-calendar-responsive.css" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -27,23 +28,23 @@
                 <li><a href="#ai-chat">AI Chat</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <button class="menu-toggle" id="menuToggle">☰</button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">&#9776;</button>
         </div>
     </nav>
 
     <section id="home">
         <div class="container">
             <div class="profile-pic">
-                <img src="/profile.PNG" alt="André Pettersson" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                <img src="/profile.PNG" alt="André Pettersson" loading="lazy">
             </div>
             <h1>André Pettersson</h1>
             <p class="subtitle">Fullstack student | Aspiring developer</p>
             <div class="cta-buttons">
-                <button class="cta-button primary" onclick="document.getElementById('ai-chat').scrollIntoView({behavior: 'smooth'})">
+                <button class="cta-button primary" id="chat-cta">
                     Chat with AI Me
                 </button>
-                <a href="andre-pettersson-cv.pdf" class="cta-button secondary" target="_blank">
-                    <span class="download-icon">📄</span>
+                <a href="andre-pettersson-cv.pdf" class="cta-button secondary" target="_blank" rel="noopener noreferrer">
+                    <span class="download-icon">&#128196;</span>
                     Download CV
                 </a>
             </div>
@@ -55,7 +56,7 @@
             <h2 class="animate-on-scroll">About Me</h2>
             <div class="about-grid">
                 <div class="about-card animate-on-scroll">
-                    <div class="icon">💻</div>
+                    <div class="icon">&#128187;</div>
                     <h3>Fullstack Development</h3>
                     <p>Jag tränas i att bygga produktionsklara applikationer från grunden – från databasdesign och säkra .NET-API:er till moderna React-gränssnitt.</p>
                     <div class="tech-tags">
@@ -67,7 +68,7 @@
                 </div>
 
                 <div class="about-card animate-on-scroll">
-                    <div class="icon">🏗️</div>
+                    <div class="icon">&#127959;&#65039;</div>
                     <h3>Architecture & Agile</h3>
                     <p>Fokus på <strong>Clean Architecture</strong> och <strong>CQRS</strong> för skalbar kod. Erfaren av agil leverans i team med Scrum, TDD och GitHub Flow.</p>
                     <div class="tech-tags">
@@ -80,7 +81,7 @@
             </div>
 
             <div class="github-calendar-container animate-on-scroll">
-                <h3>Github Coding Activity ⚡</h3>
+                <h3>Github Coding Activity &#9889;</h3>
                 <div class="calendar">
                     Loading the data just for you...
                 </div>
@@ -91,202 +92,8 @@
     <section id="projects">
         <div class="container">
             <h2 class="animate-on-scroll">Featured Projects</h2>
-            <div class="projects-grid">
-
-                <div class="project-card animate-on-scroll">
-                    <div class="icon">📅</div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        <h3 style="margin: 0;">ShiftMate</h3>
-                        <span style="background: rgba(34, 211, 238, 0.1); color: #22d3ee; font-size: 0.6rem; padding: 2px 8px; border-radius: 10px; font-weight: bold; border: 1px solid rgba(34, 211, 238, 0.3);">FULLSTACK WMS</span>
-                    </div>
-
-                    <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #22d3ee; font-weight:bold;">
-                        Planning • CQRS • Architecture
-                    </p>
-
-                    <p style="margin-bottom: 1rem;">
-                        A robust Workforce Management System for scheduling and shift swaps. Built with a focus on scalable architecture and complex business logic.
-                    </p>
-
-                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem; color: #cbd5e1; font-size: 0.9rem;">
-                        <li style="margin-bottom: 4px;">🏗️ <strong>Architecture:</strong> CQRS with MediatR & EF Core</li>
-                        <li style="margin-bottom: 4px;">🗄️ <strong>Database:</strong> PostgreSQL (Hosted on Supabase)</li>
-                        <li style="margin-bottom: 4px;">🔐 <strong>Security:</strong> JWT Auth, Hashing & Roles</li>
-                    </ul>
-
-                    <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-                        <strong>🎯 Focus:</strong> Advanced Backend Patterns & React
-                    </div>
-
-                    <div class="tech-tags">
-                        <span class="tech-tag purple">.NET 8</span>
-                        <span class="tech-tag cyan">React</span>
-                        <span class="tech-tag pink">PostgreSQL</span>
-                        <span class="tech-tag orange">Docker</span>
-                    </div>
-
-                    <div style="margin-top: auto; display: flex; gap: 1rem; width: 100%;">
-                        <a href="https://shiftmate-ruby.vercel.app/" class="project-link" target="_blank" style="margin-top: 0;">Live Demo →</a>
-                        <a href="https://github.com/Burra17/ShiftMate" class="project-link" target="_blank" style="margin-top: 0;">View Code →</a>
-                    </div>
-                </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="icon">🛡️</div>
-                    <h3>Quest Tracker RPG</h3>
-
-                    <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #22d3ee; font-weight:bold;">
-                        Gamify • Organize • Secure • Level Up
-                    </p>
-
-                    <p style="margin-bottom: 1rem;">
-                        My first major C# project designed to gamify task management. It combines classic CRUD functionality with modern AI assistance and secure SMS authentication.
-                    </p>
-
-                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem; color: #cbd5e1; font-size: 0.9rem;">
-                        <li style="margin-bottom: 4px;">⚔️ <strong>Quest Management:</strong> Create & complete tasks</li>
-                        <li style="margin-bottom: 4px;">🤖 <strong>Guild Advisor:</strong> OpenAI integration for tips</li>
-                        <li style="margin-bottom: 4px;">🔐 <strong>Security:</strong> 2FA Login via Twilio SMS</li>
-                    </ul>
-
-                    <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-                        <strong>🎯 Focus:</strong> OOP, Async Calls & API Integration
-                    </div>
-
-                    <div class="tech-tags">
-                        <span class="tech-tag purple">C# .NET 8</span>
-                        <span class="tech-tag cyan">OpenAI API</span>
-                        <span class="tech-tag orange">Twilio 2FA</span>
-                        <span class="tech-tag pink">Spectre.Console</span>
-                    </div>
-
-                    <a href="https://github.com/Burra17/Portfolio-Projekt-Quest-Tracker" class="project-link" target="_blank">View Project →</a>
-                </div>
-
-                <div class="project-card travel-journal animate-on-scroll">
-                    <div class="icon">✈️</div>
-                    <h3>Travel Journal</h3>
-                    <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #22d3ee; font-weight:bold;">Plan • Save • Travel • Remember</p>
-
-                    <p style="margin-bottom: 1rem;">A comprehensive application to manage your entire travel experience. Developed as a group project at NBI Handelsakademin.</p>
-
-                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem; color: #cbd5e1; font-size: 0.9rem;">
-                        <li style="margin-bottom: 4px;">🗺️ <strong>Plan:</strong> Destinations & budget warnings</li>
-                        <li style="margin-bottom: 4px;">💰 <strong>Save:</strong> Savings goals & cost tracking</li>
-                        <li style="margin-bottom: 4px;">📊 <strong>History:</strong> Statistics & ratings for past trips</li>
-                    </ul>
-
-                    <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-                        <strong>👥 Team:</strong> André, Joakim, Bozhidar, Georgia, Yousuf
-                    </div>
-
-                    <div class="tech-tags">
-                        <span class="tech-tag cyan">C# .NET</span>
-                        <span class="tech-tag purple">Group Project</span>
-                        <span class="tech-tag pink">Agile / Scrum</span>
-                        <span class="tech-tag orange">JSON Storage</span>
-                    </div>
-
-                    <a href="https://github.com/Burra17/Travel-Journal-Portfolio" class="project-link" target="_blank">View Project →</a>
-                </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="icon">🏡</div>
-                    <h3>Brogården</h3>
-
-                    <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #22d3ee; font-weight:bold;">
-                        Nature • Comfort • Experience
-                    </p>
-
-                    <p style="margin-bottom: 1rem;">
-                        A modern, responsive landing page for a hostel and campsite. Built to drive bookings and showcase the facility with an inviting design.
-                    </p>
-
-                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem; color: #cbd5e1; font-size: 0.9rem;">
-                        <li style="margin-bottom: 4px;">📱 <strong>Mobile First:</strong> Fully responsive layout</li>
-                        <li style="margin-bottom: 4px;">🎨 <strong>Modern UI:</strong> Clean aesthetics with CSS3</li>
-                        <li style="margin-bottom: 4px;">📈 <strong>Conversion:</strong> Strategic Call-to-Actions</li>
-                    </ul>
-
-                    <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-                        <strong>🎯 Focus:</strong> Frontend Design, UX & Accessibility
-                    </div>
-
-                    <div class="tech-tags">
-                        <span class="tech-tag orange">HTML5</span>
-                        <span class="tech-tag pink">CSS3</span>
-                        <span class="tech-tag cyan">Responsive Design</span>
-                    </div>
-
-                    <div style="margin-top: auto; display: flex; gap: 1rem; width: 100%;">
-                        <a href="https://burra17.github.io/Brogarden-website/index.html" class="project-link" target="_blank" style="margin-top: 0;">Live Demo →</a>
-                        <a href="https://github.com/Burra17/Brogarden-website" class="project-link" target="_blank" style="margin-top: 0;">View Code →</a>
-                    </div>
-                </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="icon">🌲</div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                        <h3 style="margin: 0;">Brogården v2</h3>
-                        <span style="background: #7FB346; color: white; font-size: 0.6rem; padding: 2px 8px; border-radius: 10px; font-weight: bold; white-space: nowrap;">REACT VERSION</span>
-                    </div>
-                    <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #7FB346; font-weight:bold;">
-                        Modern SPA • React • Vite
-                    </p>
-                    <p style="margin-bottom: 1rem;">
-                        A complete overhaul of the Brogården website, rebuilt as a modern Single Page Application (SPA) focusing on performance and modularity.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem; color: #cbd5e1; font-size: 0.9rem;">
-                        <li style="margin-bottom: 4px;">⚡ <strong>Fast:</strong> Powered by React and Vite for instant loads</li>
-                        <li style="margin-bottom: 4px;">🏗️ <strong>Modular:</strong> Component-based architecture</li>
-                        <li style="margin-bottom: 4px;">🍃 <strong>Enhanced:</strong> Refined UI with modern interactions</li>
-                    </ul>
-                    <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-                        <strong>🎯 Focus:</strong> State Management & Modern Frontend Tooling
-                    </div>
-                    <div class="tech-tags">
-                        <span class="tech-tag cyan" style="background: rgba(34, 211, 238, 0.1); color: #22d3ee;">React</span>
-                        <span class="tech-tag purple" style="background: rgba(168, 85, 247, 0.1); color: #a855f7;">Vite</span>
-                        <span class="tech-tag orange">JavaScript</span>
-                        <span class="tech-tag pink">SPA</span>
-                    </div>
-                    <div style="margin-top: auto; display: flex; gap: 1rem; width: 100%;">
-                        <a href="https://burra17.github.io/Brogarden/#/" class="project-link" target="_blank" style="margin-top: 0;">Live Demo →</a>
-                        <a href="https://github.com/Burra17/Brogarden" class="project-link" target="_blank" style="margin-top: 0;">View Code →</a>
-                    </div>
-                </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="icon">🚀</div>
-                    <h3>GitHub Projects</h3>
-
-                    <p class="subtitle" style="margin-bottom: 0.5rem; font-size: 0.9rem; color: #22d3ee; font-weight:bold;">
-                        Experiments • Prototypes • Code
-                    </p>
-
-                    <p style="margin-bottom: 1rem;">
-                        A collection of my coding experiments, smaller scripts, and learning exercises. This is where I test new ideas and sharpen my skills.
-                    </p>
-
-                    <ul style="list-style: none; padding: 0; margin-bottom: 1rem; color: #cbd5e1; font-size: 0.9rem;">
-                        <li style="margin-bottom: 4px;">🧩 <strong>Algorithms:</strong> Logic & problem solving</li>
-                        <li style="margin-bottom: 4px;">🎮 <strong>Mini-games:</strong> Small interactive concepts</li>
-                        <li style="margin-bottom: 4px;">📚 <strong>Learning:</strong> Following tutorials & docs</li>
-                    </ul>
-
-                    <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
-                        <strong>🎯 Focus:</strong> Continuous Learning & Syntax
-                    </div>
-
-                    <div class="tech-tags">
-                        <span class="tech-tag pink">Git</span>
-                        <span class="tech-tag purple">GitHub</span>
-                        <span class="tech-tag cyan">JavaScript / C#</span>
-                    </div>
-
-                    <a href="https://github.com/burra17" class="project-link" target="_blank">View Profile →</a>
-                </div>
-
+            <div class="projects-grid" id="projects-grid">
+                <!-- Rendered by js/projects.js -->
             </div>
         </div>
     </section>
@@ -294,7 +101,7 @@
     <section id="ai-chat">
         <div class="container">
             <h2 class="animate-on-scroll">Ask My AI Assistant</h2>
-            <p style="text-align: center; color: #94a3b8; margin-bottom: 2rem;">
+            <p class="text-center-muted">
                 Curious about my skills or background? Ask my AI-avatar anything!
             </p>
 
@@ -302,13 +109,12 @@
                 <div class="chat-header">
                     <div class="header-title">
                         <h3>André's AI Assistant</h3>
-                        <span class="status-dot"></span>
                     </div>
                 </div>
 
                 <div id="messages">
                     <div class="message-row ai-row">
-                        <div class="avatar">🤖</div>
+                        <div class="avatar">&#129302;</div>
                         <div class="message-bubble ai-bubble">
                             Hi! I'm André (in AI form). Feel free to ask me about my code, my projects, or why I love C#!
                         </div>
@@ -317,7 +123,7 @@
 
                 <div class="input-area">
                     <input type="text" id="user-input" placeholder="Type your question here...">
-                    <button id="send-btn">
+                    <button id="send-btn" aria-label="Send message">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                     </button>
                 </div>
@@ -335,7 +141,7 @@
                     <p>I'm currently looking for <strong>LIA (Internship)</strong> opportunities and junior Fullstack / .NET roles. Whether you have a question or just want to say hi, my inbox is open!</p>
 
                     <div class="info-item">
-                        <div class="icon-box">📍</div>
+                        <div class="icon-box">&#128205;</div>
                         <div>
                             <span>Based in:</span>
                             <strong>Gothenburg, Sweden</strong>
@@ -343,7 +149,7 @@
                     </div>
 
                     <div class="info-item">
-                        <div class="icon-box">📧</div>
+                        <div class="icon-box">&#128231;</div>
                         <div>
                             <span>Email:</span>
                             <a href="mailto:andre20030417@gmail.com">andre20030417@gmail.com</a>
@@ -351,10 +157,10 @@
                     </div>
 
                     <div class="social-buttons">
-                        <a href="https://linkedin.com/in/andre-pettersson" target="_blank" class="social-btn linkedin">
+                        <a href="https://linkedin.com/in/andre-pettersson" target="_blank" rel="noopener noreferrer" class="social-btn linkedin">
                             <i class="fab fa-linkedin"></i> <span>LinkedIn</span>
                         </a>
-                        <a href="https://github.com/burra17" target="_blank" class="social-btn github">
+                        <a href="https://github.com/burra17" target="_blank" rel="noopener noreferrer" class="social-btn github">
                             <i class="fab fa-github"></i> <span>GitHub</span>
                         </a>
                     </div>
@@ -387,10 +193,11 @@
     </section>
 
     <footer>
-        <p>© 2025 André Pettersson. Built with HTML & CSS.</p>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> André Pettersson. Built with HTML & CSS.</p>
     </footer>
 
-    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <script src="https://unpkg.com/github-calendar@2.3.4/dist/github-calendar.min.js"></script>
+    <script src="js/projects.js"></script>
     <script src="js/script.js"></script>
     <script src="js/chat-ui.js"></script>
 

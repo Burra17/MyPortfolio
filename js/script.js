@@ -1,4 +1,4 @@
-﻿// Mobile menu toggle
+// Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
 
@@ -11,6 +11,11 @@ navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('active');
     });
+});
+
+// CTA button: scroll to AI chat section
+document.getElementById('chat-cta').addEventListener('click', () => {
+    document.getElementById('ai-chat').scrollIntoView({ behavior: 'smooth' });
 });
 
 // Navbar scroll effect
@@ -43,8 +48,7 @@ document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
 });
 
-// GitHub Calendar Initialization
-// Detta hämtar datan för användaren "Burra17"
+// GitHub Calendar initialization
 GitHubCalendar(".calendar", "Burra17", {
     responsive: true,
     tooltips: true
