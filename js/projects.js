@@ -108,7 +108,7 @@ const projects = [
             { label: "SPA", color: "pink" }
         ],
         links: [
-            { text: "Live Demo", url: "https://burra17.github.io/Brogarden/#/" },
+            { text: "Live Demo", url: "https://www.efsbrogarden.se/" },
             { text: "View Code", url: "https://github.com/Burra17/Brogarden" }
         ]
     },
