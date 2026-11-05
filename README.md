@@ -41,29 +41,30 @@ MyPortfolio/
 │   ├── chat-ui.js          # Chat interface logic
 │   └── contact.js          # EmailJS contact form handler
 ├── index.html              # Single-page HTML shell
-├── profile.PNG
+├── profile.webp
 ├── andre-pettersson-cv.pdf
 └── README.md
 ```
 
 ## Featured Projects
 
-1. **ShiftMate (Fullstack WMS):** A Workforce Management System for scheduling and shift swaps - .NET 8, React, PostgreSQL, Docker.
-2. **Quest Tracker RPG:** A CLI-based task manager gamified with C#, OpenAI, and Twilio 2FA.
-3. **Travel Journal:** A group project for managing travel plans and memories (C# & JSON Storage).
-4. **Brogarden:** A responsive landing page for a hostel/campsite (HTML/CSS).
-5. **Brogarden v2:** A complete React/Vite SPA rebuild of the Brogarden site.
-6. **GitHub Projects:** A collection of coding experiments and continuous learning.
+1. **ShiftMate:** Shift management system with a shift-swap marketplace - .NET 8, React, PostgreSQL.
+2. **Articles:** Academic journal platform built as five microservices - .NET 9, RabbitMQ, gRPC.
+3. **TaskBoard:** Clean Architecture Web API with CQRS, JWT and rate limiting - .NET 10, EF Core.
+4. **Brogården:** Live website for a camp and hostel, built for a real client - React, TypeScript, Vite.
+5. **React Nexus:** Interactive textbook and code lab about React, TanStack Query and MUI.
+6. **Todo App:** My first mobile app - React Native, Expo.
+7. **GitHub Projects:** Everything else on my GitHub.
 
 ## How to Run Locally
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/Burra17/Portfolio-Website.git
+    git clone https://github.com/Burra17/MyPortfolio.git
     ```
 2. **Navigate to the folder:**
     ```bash
-    cd Portfolio-Website
+    cd MyPortfolio
     ```
 3. **Start a local server:**
     The static site works with any local server. If you have VS Code, use the Live Server extension. The AI chat feature requires the Vercel CLI to run the serverless function locally:
@@ -72,6 +73,27 @@ MyPortfolio/
     vercel dev
     ```
     You will also need a `.env` file with `OPENAI_API_KEY` and optionally `DISCORD_WEBHOOK_URL`.
+
+## Git Workflow
+
+Each GitHub issue gets its own branch, named with a prefix:
+
+| Prefix     | Used for                      | Example                      |
+| ---------- | ----------------------------- | ---------------------------- |
+| `feature/` | New functionality             | `feature/experience-section` |
+| `fix/`     | Bug fixes                     | `fix/ai-chat-prompt`         |
+| `docs/`    | Documentation                 | `docs/readme`                |
+| `chore/`   | Cleanup, refactoring, tooling | `chore/assets-and-docs`      |
+
+- Commit messages are written in English, in the imperative mood: `Add experience section`, not `Added ...`.
+- Open a pull request with `Closes #<issue>` in the description so the issue closes on merge.
+- Branches are deleted on GitHub automatically after merge. Clean up locally with:
+
+```bash
+git checkout main
+git pull
+git branch -d <branch>
+```
 
 ## Contact
 
