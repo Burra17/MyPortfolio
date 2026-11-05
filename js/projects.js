@@ -3,13 +3,13 @@ const projects = [
     {
         icon: "\u{1F4C5}",
         title: "ShiftMate",
-        badge: "FULLSTACK WMS",
-        subtitle: "Planning \u2022 CQRS \u2022 Architecture",
-        description: "A robust Workforce Management System for scheduling and shift swaps. Built with a focus on scalable architecture and complex business logic.",
+        badge: "FULLSTACK",
+        subtitle: "Schedule \u2022 Swap \u2022 Manage",
+        description: "A shift management system where employees swap shifts on a marketplace and managers run the schedule. Invite-based registration, email verification and role-based access.",
         features: [
-            { emoji: "\u{1F3D7}\uFE0F", label: "Architecture", text: "CQRS with MediatR & EF Core" },
-            { emoji: "\u{1F5C4}\uFE0F", label: "Database", text: "PostgreSQL (Hosted on Supabase)" },
-            { emoji: "\u{1F512}", label: "Security", text: "JWT Auth, Hashing & Roles" }
+            { emoji: "\u{1F3D7}\uFE0F", label: "Architecture", text: "Clean Architecture with CQRS via MediatR" },
+            { emoji: "\u{1F5C4}\uFE0F", label: "Database", text: "PostgreSQL (hosted on Supabase)" },
+            { emoji: "\u{1F512}", label: "Security", text: "JWT auth, BCrypt hashing and roles" }
         ],
         focus: "Advanced Backend Patterns & React",
         tags: [
@@ -24,99 +24,122 @@ const projects = [
         ]
     },
     {
-        icon: "\u{1F6E1}\uFE0F",
-        title: "Quest Tracker RPG",
-        subtitle: "Gamify \u2022 Organize \u2022 Secure \u2022 Level Up",
-        description: "My first major C# project designed to gamify task management. It combines classic CRUD functionality with modern AI assistance and secure SMS authentication.",
+        icon: "\u{1F4F0}",
+        title: "Articles",
+        badge: "MICROSERVICES",
+        subtitle: "Submit • Review • Publish",
+        description: "An academic journal platform split into five microservices, from article submission and peer review to publishing and discovery.",
         features: [
-            { emoji: "\u2694\uFE0F", label: "Quest Management", text: "Create & complete tasks" },
-            { emoji: "\u{1F916}", label: "Guild Advisor", text: "OpenAI integration for tips" },
-            { emoji: "\u{1F512}", label: "Security", text: "2FA Login via Twilio SMS" }
+            { emoji: "\u{1F9E9}", label: "Services", text: "Auth, Journals, Submission, Review & ArticleHub" },
+            { emoji: "\u{1F4E8}", label: "Communication", text: "RabbitMQ messaging and gRPC" },
+            { emoji: "\u{1F5C4}️", label: "Data", text: "SQL Server, MongoDB, Redis and PostgreSQL with GraphQL" }
         ],
-        focus: "OOP, Async Calls & API Integration",
+        focus: "Distributed Systems & Domain-Driven Design",
         tags: [
-            { label: "C# .NET 8", color: "purple" },
-            { label: "OpenAI API", color: "cyan" },
-            { label: "Twilio 2FA", color: "orange" },
-            { label: "Spectre.Console", color: "pink" }
+            { label: ".NET 9", color: "purple" },
+            { label: "RabbitMQ", color: "orange" },
+            { label: "gRPC", color: "cyan" },
+            { label: "Docker", color: "pink" }
         ],
         links: [
-            { text: "View Project", url: "https://github.com/Burra17/Portfolio-Projekt-Quest-Tracker" }
+            { text: "View Code", url: "https://github.com/Burra17/articles" }
         ]
     },
     {
-        icon: "\u2708\uFE0F",
-        title: "Travel Journal",
-        subtitle: "Plan \u2022 Save \u2022 Travel \u2022 Remember",
-        description: "A comprehensive application to manage your entire travel experience. Developed as a group project at NBI Handelsakademin.",
+        icon: "\u{1F4CB}",
+        title: "TaskBoard",
+        subtitle: "Projects • Tickets • Auth",
+        description: "A project and ticket management Web API built to show clean backend design: every request goes through MediatR, with validation and logging as pipeline behaviors.",
         features: [
-            { emoji: "\u{1F5FA}\uFE0F", label: "Plan", text: "Destinations & budget warnings" },
-            { emoji: "\u{1F4B0}", label: "Save", text: "Savings goals & cost tracking" },
-            { emoji: "\u{1F4C8}", label: "History", text: "Statistics & ratings for past trips" }
+            { emoji: "\u{1F3D7}️", label: "Architecture", text: "Clean Architecture, CQRS, Repository & Unit of Work" },
+            { emoji: "\u{1F512}", label: "Security", text: "JWT auth, BCrypt hashing and rate-limited login" },
+            { emoji: "\u{1FA7A}", label: "Operations", text: "Health checks, Serilog and Scalar API docs" }
         ],
-        focusLabel: "Team",
-        focus: "André, Joakim, Bozhidar, Georgia, Yousuf",
+        focus: "Production-Ready Backend Patterns",
         tags: [
-            { label: "C# .NET", color: "cyan" },
-            { label: "Group Project", color: "purple" },
-            { label: "Agile / Scrum", color: "pink" },
-            { label: "JSON Storage", color: "orange" }
+            { label: ".NET 10", color: "purple" },
+            { label: "EF Core", color: "cyan" },
+            { label: "MediatR", color: "orange" },
+            { label: "SQL Server", color: "pink" }
         ],
         links: [
-            { text: "View Project", url: "https://github.com/Burra17/Travel-Journal-Portfolio" }
-        ]
-    },
-    {
-        icon: "\u{1F3E1}",
-        title: "Brogården",
-        subtitle: "Nature \u2022 Comfort \u2022 Experience",
-        description: "A modern, responsive landing page for a hostel and campsite. Built to drive bookings and showcase the facility with an inviting design.",
-        features: [
-            { emoji: "\u{1F4F1}", label: "Mobile First", text: "Fully responsive layout" },
-            { emoji: "\u{1F3A8}", label: "Modern UI", text: "Clean aesthetics with CSS3" },
-            { emoji: "\u{1F4C8}", label: "Conversion", text: "Strategic Call-to-Actions" }
-        ],
-        focus: "Frontend Design, UX & Accessibility",
-        tags: [
-            { label: "HTML5", color: "orange" },
-            { label: "CSS3", color: "pink" },
-            { label: "Responsive Design", color: "cyan" }
-        ],
-        links: [
-            { text: "Live Demo", url: "https://burra17.github.io/Brogarden-website/index.html" },
-            { text: "View Code", url: "https://github.com/Burra17/Brogarden-website" }
+            { text: "View Code", url: "https://github.com/Burra17/TaskBoard" }
         ]
     },
     {
         icon: "\u{1F332}",
-        title: "Brogården v2",
-        badge: "REACT VERSION",
+        title: "Brogården",
+        badge: "CLIENT PROJECT",
         badgeColor: "green",
         subtitleColor: "green",
-        subtitle: "Modern SPA \u2022 React \u2022 Vite",
-        description: "A complete overhaul of the Brogården website, rebuilt as a modern Single Page Application (SPA) focusing on performance and modularity.",
+        subtitle: "Nature • Comfort • Experience",
+        description: "The live website for Brogården, a camp and hostel by the sea. Built for a real client with a focus on findability and fast loading.",
         features: [
-            { emoji: "\u26A1", label: "Fast", text: "Powered by React and Vite for instant loads" },
-            { emoji: "\u{1F3D7}\uFE0F", label: "Modular", text: "Component-based architecture" },
-            { emoji: "\u{1F333}", label: "Enhanced", text: "Refined UI with modern interactions" }
+            { emoji: "\u{1F50D}", label: "SEO", text: "Structured data and search-friendly pages" },
+            { emoji: "⚡", label: "Performance", text: "WebP images, React and Vite" },
+            { emoji: "\u{1F4F1}", label: "Responsive", text: "Custom mobile navigation and gallery" }
         ],
-        focus: "State Management & Modern Frontend Tooling",
+        focus: "Shipping a Real Site for a Real Client",
         tags: [
             { label: "React", color: "cyan" },
+            { label: "TypeScript", color: "pink" },
             { label: "Vite", color: "purple" },
-            { label: "JavaScript", color: "orange" },
-            { label: "SPA", color: "pink" }
+            { label: "SEO", color: "orange" }
         ],
         links: [
-            { text: "Live Demo", url: "https://www.efsbrogarden.se/" },
+            { text: "Live Site", url: "https://www.efsbrogarden.se/" },
             { text: "View Code", url: "https://github.com/Burra17/Brogarden" }
+        ]
+    },
+    {
+        icon: "⚛️",
+        title: "React Nexus",
+        subtitle: "Learn • Experiment • Understand",
+        description: "An interactive textbook and code lab that shows how React, TanStack Query and MUI work under the hood, from re-renders to cache invalidation.",
+        features: [
+            { emoji: "\u{1F4D6}", label: "Modules", text: "11 modules from state and effects to mutations and forms" },
+            { emoji: "\u{1F9EA}", label: "Live demos", text: "Every concept shown in working code" },
+            { emoji: "⚙️", label: "Quality", text: "CI pipeline with GitHub Actions" }
+        ],
+        focus: "Understanding Why, Not Just How",
+        tags: [
+            { label: "React 19", color: "cyan" },
+            { label: "TypeScript", color: "pink" },
+            { label: "TanStack Query", color: "orange" },
+            { label: "MUI", color: "purple" }
+        ],
+        links: [
+            { text: "Live Demo", url: "https://react-nexus.vercel.app" },
+            { text: "View Code", url: "https://github.com/Burra17/react-nexus" }
+        ]
+    },
+    {
+        icon: "✅",
+        title: "Todo App",
+        badge: "MOBILE",
+        subtitle: "Add • Complete • Remind",
+        description: "My first mobile app, built with React Native and Expo. A to-do list that works the way you expect on a phone.",
+        features: [
+            { emoji: "\u{1F446}", label: "Gestures", text: "Swipe to delete, long press to edit" },
+            { emoji: "\u{1F514}", label: "Reminders", text: "Local notifications that are cancelled when a task is done" },
+            { emoji: "\u{1F319}", label: "Theming", text: "Follows the system light and dark mode" }
+        ],
+        focus: "Mobile Development & Local Storage",
+        tags: [
+            { label: "React Native", color: "cyan" },
+            { label: "Expo", color: "purple" },
+            { label: "TypeScript", color: "pink" },
+            { label: "SQLite", color: "orange" }
+        ],
+        links: [
+            { text: "View Code", url: "https://github.com/Burra17/todo-app" }
         ]
     },
     {
         icon: "\u{1F680}",
         title: "GitHub Projects",
         subtitle: "Experiments \u2022 Prototypes \u2022 Code",
-        description: "A collection of my coding experiments, smaller scripts, and learning exercises. This is where I test new ideas and sharpen my skills.",
+        description: "Everything else: school projects, experiments and learning exercises. This is where I test new ideas and sharpen my skills.",
         features: [
             { emoji: "\u{1F9E9}", label: "Algorithms", text: "Logic & problem solving" },
             { emoji: "\u{1F3AE}", label: "Mini-games", text: "Small interactive concepts" },
