@@ -581,6 +581,67 @@ h1 {
     overflow: hidden;
 }
 
+/* --- Experience timeline --- */
+
+.timeline {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--color-border-accent);
+}
+
+.timeline-item {
+    position: relative;
+    background: var(--color-bg-card);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-border-accent);
+    margin-bottom: 1.5rem;
+}
+
+/* Dot on the timeline line */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.5rem - 7px);
+    top: 1.75rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-accent-cyan);
+    box-shadow: var(--shadow-glow-cyan);
+}
+
+.timeline-date {
+    color: var(--color-accent-cyan);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.timeline-item h3 {
+    margin: 0.25rem 0 0.75rem;
+}
+
+.timeline-item p,
+.timeline-points {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.timeline-points {
+    padding-left: 1.25rem;
+}
+
+.timeline-points li {
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item .tech-tags {
+    margin-top: 1rem;
+}
+
 /* Project cards: two per row */
 .project-card {
     flex: 0 1 calc(50% - 1rem);

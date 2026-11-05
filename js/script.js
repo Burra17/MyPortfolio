@@ -13,11 +13,6 @@ navLinks.querySelectorAll('a').forEach(link => {
     });
 });
 
-// CTA button: scroll to AI chat section
-document.getElementById('chat-cta').addEventListener('click', () => {
-    document.getElementById('ai-chat').scrollIntoView({ behavior: 'smooth' });
-});
-
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.getElementById('navbar');
