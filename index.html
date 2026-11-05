@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="André Pettersson - Fullstack Developer Portfolio. .NET, React, and modern web development projects. Based in Gothenburg, Sweden.">
+    <meta name="description" content="André Pettersson - Fullstack .NET + React developer and student at NBI. Projects, experience and contact. Based in Hudiksvall, Sweden.">
     <link rel="icon" type="image/png" href="/favicon-32x32.png">
     <title>André Pettersson - Portfolio</title>
     <link rel="stylesheet" href="https://unpkg.com/github-calendar@2.3.4/dist/github-calendar-responsive.css" />
@@ -24,6 +24,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#ai-chat">AI Chat</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -38,11 +39,11 @@
                 <img src="/profile.PNG" alt="André Pettersson" loading="lazy">
             </div>
             <h1>André Pettersson</h1>
-            <p class="subtitle">Fullstack student | Aspiring developer</p>
+            <p class="subtitle">Fullstack .NET + React developer · Student at NBI</p>
             <div class="cta-buttons">
-                <button class="cta-button primary" id="chat-cta">
-                    Chat with AI Me
-                </button>
+                <a href="#projects" class="cta-button primary">
+                    View Projects
+                </a>
                 <a href="andre-pettersson-cv.pdf" class="cta-button secondary" target="_blank" rel="noopener noreferrer">
                     <span class="download-icon">&#128196;</span>
                     Download CV
@@ -59,25 +60,26 @@
                     <div class="icon">&#128187;</div>
                     <h3>Fullstack Development</h3>
                     <p>
-                        I am training to build production-ready applications from the ground up from database design and secure .NET APIs to modern React interfaces.
+                        I build applications end to end: .NET APIs and database design on the backend, React and TypeScript on the frontend. During my internship at Apptech I shipped features to production on both sides.
                     </p>
                     <div class="tech-tags">
-                        <span class="tech-tag purple">.NET Core</span>
+                        <span class="tech-tag purple">.NET</span>
                         <span class="tech-tag cyan">React</span>
-                        <span class="tech-tag orange">SQL Server</span>
-                        <span class="tech-tag pink">Tailwind CSS</span>
+                        <span class="tech-tag pink">TypeScript</span>
+                        <span class="tech-tag orange">TanStack Query</span>
+                        <span class="tech-tag cyan">MUI</span>
                     </div>
                 </div>
 
                 <div class="about-card animate-on-scroll">
                     <div class="icon">&#127959;&#65039;</div>
-                    <h3>Architecture & Agile</h3>
-                    <p>My approach is centered around Clean Architecture and CQRS for building scalable systems. I have a proven track record of agile delivery, working effectively in teams with Scrum, TDD, and GitHub Flow.</p>
+                    <h3>Architecture & Workflow</h3>
+                    <p>I structure backends with Clean Architecture and CQRS, and work in small, reviewed pull requests with GitHub Flow. I care about keeping code clean enough that the next person can follow it.</p>
                     <div class="tech-tags">
-                        <span class="tech-tag pink">Git/GitHub</span>
-                        <span class="tech-tag purple">Python</span>
+                        <span class="tech-tag purple">Clean Architecture</span>
+                        <span class="tech-tag orange">CQRS</span>
                         <span class="tech-tag cyan">JWT/Identity</span>
-                        <span class="tech-tag orange">Agile</span>
+                        <span class="tech-tag pink">Git/GitHub</span>
                     </div>
                 </div>
             </div>
@@ -88,6 +90,56 @@
                     Loading the data just for you...
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="animate-on-scroll">Experience</h2>
+            <ol class="timeline">
+                <li class="timeline-item animate-on-scroll">
+                    <span class="timeline-date">Feb – May 2027 · Upcoming</span>
+                    <h3>Fullstack Developer (Internship) · Apptech</h3>
+                    <p>Returning to Apptech for my second internship.</p>
+                </li>
+
+                <li class="timeline-item animate-on-scroll">
+                    <span class="timeline-date">Aug – Nov 2026</span>
+                    <h3>Fullstack Developer (Internship) · Apptech</h3>
+                    <ul class="timeline-points">
+                        <li><strong>EasyStaff – Equipment module:</strong> built the backend API (asset lifecycle, fault reporting, push reminders, scheduled jobs with Hangfire, role-based access) and the React/TypeScript UI on top of it.</li>
+                        <li><strong>Föreningssupport – Help pages:</strong> API and database for a help-page back office, plus the admin UI, a customer-facing help view and an in-app help panel.</li>
+                    </ul>
+                    <div class="tech-tags">
+                        <span class="tech-tag cyan">React</span>
+                        <span class="tech-tag pink">TypeScript</span>
+                        <span class="tech-tag orange">TanStack Query</span>
+                        <span class="tech-tag cyan">MUI</span>
+                        <span class="tech-tag purple">.NET</span>
+                        <span class="tech-tag purple">Umbraco</span>
+                        <span class="tech-tag orange">Dapper</span>
+                        <span class="tech-tag pink">Hangfire</span>
+                    </div>
+                </li>
+
+                <li class="timeline-item animate-on-scroll">
+                    <span class="timeline-date">Feb – Aug 2026</span>
+                    <h3>Fullstack Developer · InFiNet Code</h3>
+                    <p>Worked on DOJO Future, a cloud-based learning management system for Swedish higher vocational education: a .NET 10 backend with Clean Architecture and CQRS, a Next.js and React frontend, and JWT, BankID and role-based access across several portals.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag purple">.NET 10</span>
+                        <span class="tech-tag cyan">Next.js</span>
+                        <span class="tech-tag orange">PostgreSQL</span>
+                        <span class="tech-tag pink">TanStack Query</span>
+                    </div>
+                </li>
+
+                <li class="timeline-item animate-on-scroll">
+                    <span class="timeline-date">Aug 2025 – Jun 2027</span>
+                    <h3>Systems Developer (Fullstack) · NBI Handelsakademin</h3>
+                    <p>Two-year higher vocational education program, studying remotely between internships. Graduating June 2027.</p>
+                </li>
+            </ol>
         </div>
     </section>
 
@@ -140,13 +192,13 @@
 
                 <div class="contact-info">
                     <h3>Let's talk code!</h3>
-                    <p>I'm currently looking for <strong>LIA (Internship)</strong> opportunities and junior Fullstack / .NET roles. Whether you have a question or just want to say hi, my inbox is open!</p>
+                    <p>I'm finishing my first internship at Apptech and returning there for my second in February 2027. After graduating in June 2027, I'm looking for <strong>junior fullstack / .NET roles</strong>. Whether you have a question or just want to say hi, my inbox is open!</p>
 
                     <div class="info-item">
                         <div class="icon-box">&#128205;</div>
                         <div>
                             <span>Based in:</span>
-                            <strong>Gothenburg, Sweden</strong>
+                            <strong>Hudiksvall, Sweden · open to remote or relocation</strong>
                         </div>
                     </div>
 
@@ -195,7 +247,7 @@
     </section>
 
     <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear())</script> André Pettersson. Built with HTML & CSS.</p>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> André Pettersson. Built with HTML, CSS & JavaScript.</p>
     </footer>
 
     <script src="https://unpkg.com/github-calendar@2.3.4/dist/github-calendar.min.js"></script>
